@@ -37,7 +37,7 @@
 
 .new_div{
 	background-color: #FFBA84;
-	height: 150vh;
+	height: 400vh;
 	width: auto;
 	display: none;
 	animation: flyInto 1s both;
@@ -101,17 +101,78 @@
     border-bottom: 8px solid #00cc99;
 }
 
-.rightbar{
+#rightbar{
 	display: none;
+	flex-direction: column;
+	justify-content: center;
 	position: fixed;
-	z-index: 9999;
-	right: 3%;
+	z-index: 9997;
+	right: 0%;
 	bottom: 15%;
-	width: 15vw;
+	width: 20vw;
 	height: 65vh;
 	background-image: url(../images/map.png);
 	background-size: 100% 100%;
 	animation: flyInto 1s both;
+}
+#footprints{
+	position: absolute;
+	z-index: 9998;
+	right: 25%;
+	bottom: 68%;
+	width: 10vw;
+	height: 2vh;
+	opacity: 0.4;
+	clip: rect(0vh, 0vw, 2vh, 0vw);
+	animation-name: Show;
+    animation-duration: 3s;
+	animation-fill-mode: forwards;
+	animation-delay: 2s;
+}
+@keyframes Show {
+	from { clip: rect(0vh, 0vw, 2vh, 0vw);}
+    to { clip: rect(0vh, 10vw, 2vh, 0vw); }
+}
+.rightbarBT{
+	line-height: 10vh;
+	font-family: 'Dancing Script', cursive;
+	font-size: 20px;
+}
+
+#gototop{
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	right: 3%;
+	bottom: 5%;
+	width: 50px;
+	height: 50px;
+	background-image: url(../images/gototop.png);
+	background-size: 80% 80%;
+	background-position: center;
+	border-style: solid;
+	border-width: 3px;
+	border-color: #D7C4BB;
+}
+#gototop:hover{
+	animation-name: Change;    /*動畫名稱，需與 keyframe 名稱對應*/
+    animation-duration: 1.5s;    /*動畫持續時間，單位為秒*/
+	animation-fill-mode: forwards;
+}
+#gototop:not(:hover){
+	animation-name: Change2;    /*動畫名稱，需與 keyframe 名稱對應*/
+    animation-duration: 1.5s;    /*動畫持續時間，單位為秒*/
+	animation-fill-mode: forwards;
+}
+/* 關鍵影格(@keyframe) */
+@keyframes Change {
+    from { border-color: #D7C4BB;}
+    to { border-color: #ADA142;}
+}
+/* 關鍵影格(@keyframe) */
+@keyframes Change2 {
+    from { border-color: #ADA142;}
+    to { border-color: #D7C4BB;}
 }
 
 .download{
@@ -140,7 +201,7 @@
 }
 .blur{
 	width: 40%;
-	height: 20%;
+	height: 30vh;
 	position: absolute;
 	margin-left: 5%;
 	margin-top: 23%;
