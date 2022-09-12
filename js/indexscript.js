@@ -34,3 +34,12 @@ function FourLeafCloverZCEachScrollBy(eachHeight){
         }
     }
 }
+
+//假設DIV2是概念設計，gototop2函式就是跳到概念設計用的
+var tt = document.getElementById("DIV2");
+function gototop2(){
+    window.scrollTo({
+		top: (jQuery(tt).offset().top)-75,
+		behavior: "smooth"
+	});
+}
